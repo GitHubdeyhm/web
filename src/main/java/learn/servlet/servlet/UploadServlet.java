@@ -22,8 +22,8 @@ import java.io.IOException;
  * @author huangxl
  * @date 2017-09-17 21:22
  */
-@WebServlet(urlPatterns="/uploadFile.do")//注解方式定义servlet，指定请求url
-@MultipartConfig(location = "e:\\servlet",maxFileSize = 10485760L)//文件上传需配置的注解---指定上传文件的最大值
+@WebServlet(urlPatterns="/servlet/upload")//注解方式定义servlet，指定请求url
+@MultipartConfig(location = "/home/jiaoweiwei/Desktop", maxFileSize = 10485760L)//文件上传需配置的注解---指定上传文件的最大值
 public class UploadServlet extends HttpServlet {
 
     @Override

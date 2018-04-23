@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author huangxl
  * @date 2017-09-17 22:24
  */
-@WebFilter(urlPatterns = "/servlet")//“/*”代表拦截所有的请求，包括静态资源文件
+//@WebFilter(urlPatterns = "/servlet")//“/*”代表拦截所有的请求，包括静态资源文件
 public class FilterTest implements Filter {
 
     @Override
