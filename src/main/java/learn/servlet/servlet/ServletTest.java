@@ -4,12 +4,13 @@ import learn.util.IOUtil;
 import learn.util.WebUtil;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * servlet测试
@@ -18,6 +19,15 @@ import java.io.*;
  */
 @WebServlet("/servlet")
 public class ServletTest extends HttpServlet {
+
+    public ServletTest() {
+        System.out.println("--ServletTest--");
+    }
+
+    @Override
+    public void init() throws ServletException {
+        System.out.println("-----init()---------");
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
