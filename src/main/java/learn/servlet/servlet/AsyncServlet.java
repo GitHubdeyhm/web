@@ -28,6 +28,10 @@ public class AsyncServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/plain;charset=UTF-8");
 
+        //非阻塞IO
+        //req.getInputStream().setReadListener();
+        //resp.getOutputStream().setWriteListener();
+
         //启动异步请求
         AsyncContext asyncContext = req.startAsync();
         //设置异步处理的超时时间，默认为30s

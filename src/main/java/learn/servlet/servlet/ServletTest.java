@@ -13,11 +13,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * servlet测试
+ * servlet测试。属性说明：
+ * loadOnStartup=1代表程序启动时就初始化servlet，否则在调用servlet时才会初始化servlet。
  * @author huangxl
  * @date 2017-09-17 22:01
  */
-@WebServlet("/servlet")
+@WebServlet(urlPatterns = "/servlet", loadOnStartup = 1)
 public class ServletTest extends HttpServlet {
 
     public ServletTest() {
@@ -27,6 +28,11 @@ public class ServletTest extends HttpServlet {
     @Override
     public void init() throws ServletException {
         System.out.println("-----init()---------");
+    }
+
+    @Override
+    public void init() throws ServletException {
+        System.out.println("======init()====");
     }
 
     @Override

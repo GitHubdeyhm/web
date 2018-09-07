@@ -4,7 +4,7 @@
     <groupId>learn.web</groupId>
     <artifactId>web</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>web</name>
     <url>http://maven.apache.org</url>
     <description>j2EE servlet3.0+ Test</description>

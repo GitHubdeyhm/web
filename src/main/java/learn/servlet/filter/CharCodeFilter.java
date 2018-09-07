@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author huangxiaolin
  * @date 2018-04-23 下午4:31
  */
-//@WebFilter(urlPatterns = "/*", initParams = {@WebInitParam(name = "charset", value = "UTF-8")})
+@WebFilter(urlPatterns = "/*", asyncSupported = true, initParams = {@WebInitParam(name = "charset", value = "UTF-8")})
 public class CharCodeFilter implements Filter {
 
     private String charset;
