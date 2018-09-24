@@ -41,7 +41,7 @@ public class WebUtil {
      * @author huangxiaolin
      * @date 2018-04-23 16:07
      */
-    public static Map<String, String> getRequestHeaders(HttpServletRequest request) {
+    public static Map<String, String> printRequestHeaders(HttpServletRequest request) {
         System.out.println("------请求头begin-------------");
         Map<String, String> headMap = new HashMap<>();
         Enumeration<String> headers = request.getHeaderNames();
@@ -54,26 +54,5 @@ public class WebUtil {
         return headMap;
     }
 
-    /**
-     * 判断上传文件的类型是否是允许上传的类型
-     * @author huangxiaolin
-     * @date 2018-04-19 13:50
-     * @return 允许的文件类型返回true，否则返回false
-     */
-    public static boolean isAllowFileType(String fileName, String... fileTypes) {
-        if (StringUtil.isNullOrEmpty(fileName)) {
-            return false;
-        }
-        int index = fileName.lastIndexOf(".");
-        if (index < 0) {
-            return false;//该文件没有扩展名
-        }
-        String extName = fileName.substring(index + 1).toLowerCase();//确保扩展名小写
-        for (String type : fileTypes) {
-            if (type.equals(extName)) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 }

@@ -1,5 +1,6 @@
 package learn.servlet;
 
+import learn.servlet.listener.ListenerDemo;
 import learn.servlet.servlet.ServletTest;
 
 import javax.servlet.ServletContainerInitializer;
@@ -18,18 +19,20 @@ import java.util.function.Consumer;
  * @author huangxiaolin
  * @date 2018-04-23 下午6:25
  */
-@HandlesTypes(ServletTest.class)
+@HandlesTypes(ListenerDemo.class)
 public class ServletDynamicInit implements ServletContainerInitializer {
 
     @Override
-    public void onStartup(Set<Class<?>> c, ServletContext ctx) throws ServletException {
+    public void onStartup(Set<Class<?>> set, ServletContext ctx) throws ServletException {
         System.out.println("---servlet动态初始化-------");
-        c.forEach(new Consumer<Class<?>>() {
-            @Override
-            public void accept(Class<?> aClass) {
-                System.out.println(aClass);
+        if (set != null) {
+            for (Class<?> clazz : set) {
+                System.out.println(clazz);
+                ctx.addListener(clazz.getName());
             }
-        });
+        }
+//        ctx.addListener("learn.servlet.listener.ListenerDemo");
+        ctx.addListener(new ListenerDemo());
         //配置一个servlet
         //ServletRegistration.Dynamic servletTest = ctx.addServlet("servletTest", ServletTest.class);
         //servletTest.addMapping("/servlet");

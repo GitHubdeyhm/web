@@ -5,4 +5,6 @@ package learn.jdbc;
  * @date 2017-10-02 13:17
  */
 public class JdbcTest {
+    public static void main(String[] args) {
+    }
 }

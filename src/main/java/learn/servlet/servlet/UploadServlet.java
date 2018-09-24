@@ -1,5 +1,7 @@
 package learn.servlet.servlet;
 
+import learn.util.WebUtil;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -22,8 +24,8 @@ import java.io.IOException;
  * @author huangxl
  * @date 2017-09-17 21:22
  */
-@WebServlet(urlPatterns="/servlet/upload")//注解方式定义servlet，指定请求url
-@MultipartConfig(location = "/home/jiaoweiwei/Desktop", maxFileSize = 10485760L)//文件上传需配置的注解---指定上传文件的最大值
+@WebServlet(urlPatterns="/upload")//注解方式定义servlet，指定请求url
+@MultipartConfig(maxFileSize = 10485760L)//文件上传需配置的注解---指定上传文件的最大值
 public class UploadServlet extends HttpServlet {
 
     @Override
@@ -31,6 +33,8 @@ public class UploadServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");//设置字符集
         response.setContentType("text/html;charset=UTF-8");
+
+        WebUtil.printRequestHeaders(request);
 
         String param = request.getParameter("username");//获取普通input标签的参数
         System.out.println("普通参数值："+param);

@@ -27,12 +27,7 @@ public class ServletTest extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        System.out.println("-----init()---------");
-    }
-
-    @Override
-    public void init() throws ServletException {
-        System.out.println("======init()====");
+        System.out.println("======ServletTest#init()====");
     }
 
     @Override
@@ -56,7 +51,7 @@ public class ServletTest extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/plain;charset=UTF-8");
 
-        WebUtil.getRequestHeaders(req);
+        WebUtil.printRequestHeaders(req);
 
         System.out.println(req.getParameter("username"));//null
         /**
