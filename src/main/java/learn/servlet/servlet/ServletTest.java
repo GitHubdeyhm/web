@@ -18,7 +18,7 @@ import java.io.PrintWriter;
  * @author huangxl
  * @date 2017-09-17 22:01
  */
-@WebServlet(urlPatterns = "/servlet", loadOnStartup = 1)
+//@WebServlet(urlPatterns = "/servlet", loadOnStartup = 1)
 public class ServletTest extends HttpServlet {
 
     public ServletTest() {

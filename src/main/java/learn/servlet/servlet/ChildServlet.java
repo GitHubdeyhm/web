@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author huangxl
  * @date 2018-09-04 22:09
  */
-//@WebServlet(value = "/child", loadOnStartup = 1)
+@WebServlet(value = "/child", loadOnStartup = 1)
 public class ChildServlet extends ServletTest {
 
     public ChildServlet() {

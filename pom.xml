@@ -4,9 +4,8 @@
     <groupId>learn.web</groupId>
     <artifactId>web</artifactId>
     <packaging>war</packaging>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <name>web</name>
-    <url>http://maven.apache.org</url>
     <description>j2EE servlet3.0+ Test</description>
 
     <properties>
@@ -55,6 +54,13 @@
             <version>2.3.1</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.18</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 
@@ -65,6 +71,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
